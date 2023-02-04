@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@supabase/supabase-js": "^2.7.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "framer-motion": "^9.0.1",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-paystack": "^4.0.2",
+    "react-toastify": "^9.1.1",
+    "styled-components": "^5.3.6"
   }
 }

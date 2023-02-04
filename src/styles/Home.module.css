@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+background: black url('/assets/images/bg-home.png');
+background-repeat: repeat;
+background-size: contain;
 }
 
 .description {
@@ -15,7 +16,7 @@
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: var(--font-mono);
+  font-family: 'Callinga';
 }
 
 .description a {
@@ -36,7 +37,7 @@
 
 .code {
   font-weight: 700;
-  font-family: var(--font-mono);
+  font-family: 'Callinga';
 }
 
 .grid {
