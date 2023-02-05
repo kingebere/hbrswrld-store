@@ -193,12 +193,12 @@ export default function Home() {
               <div key={product.name}>
                 <AbsoluteBlur>
                   {/* <h2>{product.header}</h2>  */}
-                  <h2>{product.name}</h2>
+                  <p className="title">{product.name}</p>
                   <p> {product.description}</p>
                   <p>Click the <span className="orange">checkout button</span> to upload your photos and get styled in your Aura virtual piece.
 
 Please be sure to check the <a className="orange" href="https://hbrswrld.com/shoes/" target="_blank">Auras guide</a> to see how to ensure you get the best results.</p>
-                  <p>₦ {product.price}</p>
+                  <p className="price">₦ {product.price}</p>
                   <button className="checkButton" onClick={() => toggleModal()}>
                     Checkout
                   </button>
@@ -249,6 +249,9 @@ const ModalWrapper = styled.div`
   label {
     color: black;
   }
+ 
+ 
+  
   .purchaseButton {
     isplay: flex;
     -webkit-box-align: center;
@@ -262,8 +265,8 @@ const ModalWrapper = styled.div`
     outline: none;
     font-size: 16px;
     font-weight: 400;
-    background-color: orange;
     color: white;
+    background-color: #101010;
   }
 `
 const ContentWrapper = styled.div`
@@ -291,15 +294,23 @@ const AbsoluteBlur = styled.div`
   left: 50%;
   display: flex;
   @media only screen and (min-width: 600px) {
-    padding: 12px 54px 65px 14px;
+    padding: 40px;
     font-size: 16px;
+    align-items:center;
   }
   h2 {
     color: white;
   }
   .orange{
-    color:orange;
+    color:#d60834;
   }
+  .header{
+    font-size:30px;
+  }
+  .price{
+    font-size: 30px;
+    font-style: italic;
+}
   .checkButton {
     display: flex;
     -webkit-box-align: center;
@@ -313,7 +324,16 @@ const AbsoluteBlur = styled.div`
     outline: none;
     font-size: 16px;
     font-weight: 400;
-    background-color: orange;
+    color: white;
+    background-color: #101010;
+    transition:all 2ms ease-in;
+  }
+  .checkButton:hover{
+    color: #101010;
+    background-color: #e8e8eb;
+  }
+  .title{
+    font-size:30px;
   }
   p {
     color: white;
@@ -334,7 +354,7 @@ const PaymentCta = styled.div`
 const SocialModalBox = styled.div`
   width: 80%;
   position: relative;
-  background-color: #fff;
+  backdrop-filter: blur(12px) saturate(0%) contrast(0.5);
   max-width: 37.5rem;
   padding: 0.5em 1.6rem 1.6rem;
   border-radius: 0.5rem;
