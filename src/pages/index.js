@@ -195,6 +195,9 @@ export default function Home() {
                   {/* <h2>{product.header}</h2>  */}
                   <h2>{product.name}</h2>
                   <p> {product.description}</p>
+                  <p>Click the <span className="orange">checkout button</span> to upload your photos and get styled in your Aura virtual piece.
+
+Please be sure to check the <a className="orange" href="https://hbrswrld.com/shoes/" target="_blank">Auras guide</a> to see how to ensure you get the best results.</p>
                   <p>₦ {product.price}</p>
                   <button className="checkButton" onClick={() => toggleModal()}>
                     Checkout
@@ -293,6 +296,9 @@ const AbsoluteBlur = styled.div`
   }
   h2 {
     color: white;
+  }
+  .orange{
+    color:orange;
   }
   .checkButton {
     display: flex;
