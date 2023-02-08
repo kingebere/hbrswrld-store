@@ -38,14 +38,13 @@ export default function Home() {
   useEffect(() => {
     async function getProducts() {
       const getImage = await getScreensById()
-      toast.success(getImage)
+
       setSem(getImage)
       setLatestQuantity(getImage[0].price)
       // toast.success(getImage[0].price *quantity)
     }
     getProducts()
   }, [])
-  toast.success(sem)
 
   useEffect(() => {
     var validRegex =
@@ -55,7 +54,6 @@ export default function Home() {
     //     }
     if (useremail.match(validRegex) && imagelength > 2 && imagelength < 4) {
       imageholder.map((image) => {
-        toast.success(image)
         const imageUrl = getImage("hbrs", image)
         setGetImageUrl((prev) => {
           return [...prev, imageUrl.publicUrl]
@@ -63,7 +61,6 @@ export default function Home() {
       })
     }
   }, [imageholder, useremail])
-  toast.success(getImageUrl)
 
   useEffect(() => {
     if (useremail && imagelength > 2 && imagelength < 4) {
@@ -82,7 +79,7 @@ export default function Home() {
       for (let i = 0; i < event.target.files.length; i++) {
         fileSize += event.target.files.item(i).size
       }
-      toast.success(fileSize)
+
       const fileMb = fileSize / 1024 ** 2
 
       if (fileMb >= 20) {
@@ -151,7 +148,7 @@ export default function Home() {
                     <label>Email: </label>
 
                     <input
-                    className="input-text"
+                      className="input-text"
                       type="text"
                       value={useremail}
                       onChange={handleChangeEmail}
@@ -197,9 +194,19 @@ export default function Home() {
                   {/* <h2>{product.header}</h2>  */}
                   <p className="title">{product.name}</p>
                   <p> {product.description}</p>
-                  <p>Click the <span className="orange">checkout button</span> to upload your photos and get styled in your Aura virtual piece.
-
-Please be sure to check the <a className="orange" href="https://hbrswrld.com/shoes/" target="_blank">Auras guide</a> to see how to ensure you get the best results.</p>
+                  <p>
+                    Click the <span className="orange">checkout button</span> to
+                    upload your photos and get styled in your Aura virtual
+                    piece. Please be sure to check the{" "}
+                    <a
+                      className="orange"
+                      href="https://hbrswrld.com/shoes/"
+                      target="_blank"
+                    >
+                      Auras guide
+                    </a>{" "}
+                    to see how to ensure you get the best results.
+                  </p>
                   <p className="price">₦ {product.price}</p>
                   <button className="checkButton" onClick={() => toggleModal()}>
                     Checkout
@@ -246,19 +253,19 @@ const ModalWrapper = styled.div`
     border-radius: 40px;
     color: #b0adad;
   }
-  .input-file{
+  .input-file {
     background: #363535;
     padding: 12px;
     border: 1px solid rgb(48 47 47);
     border-radius: 40px;
     color: #b0adad;
   }
-  input:active{
-outline:none
+  input:active {
+    outline: none;
   }
-  .input-text:active{
-    border:1px solid green;
-    outline:green;
+  .input-text:active {
+    border: 1px solid green;
+    outline: green;
   }
   h1 {
     color: white;
@@ -266,9 +273,7 @@ outline:none
   label {
     color: white;
   }
- 
- 
-  
+
   .purchaseButton {
     isplay: flex;
     -webkit-box-align: center;
@@ -313,21 +318,21 @@ const AbsoluteBlur = styled.div`
   @media only screen and (min-width: 600px) {
     padding: 40px;
     font-size: 16px;
-    align-items:center;
+    align-items: center;
   }
   h2 {
     color: white;
   }
-  .orange{
-    color:#d60834;
+  .orange {
+    color: #d60834;
   }
-  .header{
-    font-size:30px;
+  .header {
+    font-size: 30px;
   }
-  .price{
+  .price {
     font-size: 30px;
     font-style: italic;
-}
+  }
   .checkButton {
     display: flex;
     -webkit-box-align: center;
@@ -343,14 +348,14 @@ const AbsoluteBlur = styled.div`
     font-weight: 400;
     color: white;
     background-color: #101010;
-    transition:all 2ms ease-in;
+    transition: all 2ms ease-in;
   }
-  .checkButton:hover{
+  .checkButton:hover {
     color: #101010;
     background-color: #e8e8eb;
   }
-  .title{
-    font-size:30px;
+  .title {
+    font-size: 30px;
   }
   p {
     color: white;
