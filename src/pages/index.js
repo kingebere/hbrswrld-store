@@ -33,7 +33,7 @@ export default function Home() {
   }, [imagelength])
 
   function showPaystack() {
-    toast("please input a maximum of three images")
+    toast("please input  three images")
   }
   useEffect(() => {
     async function getProducts() {
@@ -85,7 +85,7 @@ export default function Home() {
       toast.success(fileSize)
       const fileMb = fileSize / 1024 ** 2
 
-      if (fileMb >= 2) {
+      if (fileMb >= 20) {
         toast.success("maximum file size exceeded")
         // fileResult.innerHTML = "Please select a file less than 2MB.";
         // fileSubmit.disabled = true;
@@ -151,6 +151,7 @@ export default function Home() {
                     <label>Email: </label>
 
                     <input
+                    className="input-text"
                       type="text"
                       value={useremail}
                       onChange={handleChangeEmail}
@@ -160,6 +161,7 @@ export default function Home() {
 
                   <input
                     type="file"
+                    className="input-file"
                     onChange={handleChange}
                     id="avatar"
                     name="avatar"
@@ -168,9 +170,9 @@ export default function Home() {
                     multiple
                   />
 
-                  <div>
+                  {/* <div>
                     <h1>₦{sem[0]?.price}</h1>
-                  </div>
+                  </div> */}
                   {displayButton ? (
                     <div className="purchaseButton" onClick={showPaystack}>
                       Buy Now
@@ -237,17 +239,32 @@ const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
-  input {
-    background: white;
-    padding: 12px;
-    border: 1px solid rgb(221, 221, 221);
+  .input-text {
+    background: #363535;
+    padding: 12px 38px;
+    border: 1px solid rgb(48 47 47);
     border-radius: 40px;
+    color: #b0adad;
+  }
+  .input-file{
+    background: #363535;
+    padding: 12px;
+    border: 1px solid rgb(48 47 47);
+    border-radius: 40px;
+    color: #b0adad;
+  }
+  input:active{
+outline:none
+  }
+  .input-text:active{
+    border:1px solid green;
+    outline:green;
   }
   h1 {
     color: white;
   }
   label {
-    color: black;
+    color: white;
   }
  
  
@@ -357,5 +374,5 @@ const SocialModalBox = styled.div`
   backdrop-filter: blur(12px) saturate(0%) contrast(0.5);
   max-width: 37.5rem;
   padding: 0.5em 1.6rem 1.6rem;
-  border-radius: 0.5rem;
+  border-radius: 30px;
 `
