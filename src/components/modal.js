@@ -67,6 +67,7 @@ const ModalOverlay = styled(motion.div)`
   background-color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   display: flex;
+  
   align-items: center;
   justify-content: center;
 
