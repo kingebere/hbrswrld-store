@@ -58,6 +58,7 @@ const ModalContainer = styled.div`
   z-index: 100;
 `
 
+
 const ModalOverlay = styled(motion.div)`
   position: fixed;
   top: 0;
