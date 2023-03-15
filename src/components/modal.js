@@ -56,23 +56,7 @@ const ModalContainer = styled.div`
   height: 100%;
   width: 100%;
   z-index: 100;
-  
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
 `
-
 
 const ModalOverlay = styled(motion.div)`
   position: fixed;
@@ -83,7 +67,7 @@ const ModalOverlay = styled(motion.div)`
   background-color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
 
