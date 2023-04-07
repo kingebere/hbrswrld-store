@@ -90,6 +90,7 @@ export default function Home() {
         setImageLength(event.target.files.length)
         // fileResult.innerHTML = "Success, your file is " + fileMb.toFixed(1) + "MB.";
         // fileSubmit.disabled = true;
+        
         for (let i = 0; i < event.target.files.length; i++) {
           setImagesMap((prev) => {
             return [...prev, event.target.files[i]]
