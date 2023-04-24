@@ -64,7 +64,6 @@ export default function Home() {
 
   useEffect(() => {
     if (useremail && imagelength > 2 && imagelength < 4) {
-      
       imagesMap.map(async (image) => {
         const data = await sendImage(image)
         setImageHolder((prev) => {
@@ -95,7 +94,6 @@ export default function Home() {
         for (let i = 0; i < event.target.files.length; i++) {
           setImagesMap((prev) => {
             return [...prev, event.target.files[i]]
-            
           })
         }
       }
